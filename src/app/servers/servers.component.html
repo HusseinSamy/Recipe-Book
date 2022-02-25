@@ -1,8 +1,0 @@
-<button
-(click)="onButtonClick()"
-class="btn btn-primary">Display Details</button>
-
-<p *ngIf="display">hahahahha</p>
-
-<p *ngFor="let number of buttonLogs" [ngStyle]="{backgroundColor: number >=5 ? 'blue' : 'transparent'}" [ngClass]="{whiteBackGround: number >=5}">{{number}}</p>
-
