@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-details',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-details.component.sass']
 })
 export class RecipeDetailsComponent implements OnInit {
+  @Input() name: string = '';
+  @Input() description: string = '';
+  @Input() imagePath: string = '';
 
   constructor() { }
 

@@ -1,10 +1,11 @@
-<div class="row-md-12">
-  <div class="col-md-6">
-    <app-recipe-list>
-
-    </app-recipe-list>
+<div class="row">
+  <div class="col-md-5">
+    <app-recipe-list (detailsListner2)="Details($event)" ></app-recipe-list>
   </div>
-  <div class="col-md-6">
-    <app-recipe-details></app-recipe-details>
+  <div class="col-md-7 ">
+    <app-recipe-details
+    [name]="recipeDetails.name"
+    [description]="recipeDetails.description"
+    [imagePath]="recipeDetails.imagePath"></app-recipe-details>
   </div>
 </div>

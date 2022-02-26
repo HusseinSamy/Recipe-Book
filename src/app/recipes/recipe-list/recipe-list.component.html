@@ -1,1 +1,20 @@
-<app-recipe-item></app-recipe-item>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success"
+    (click)="createNewRecipe('Tomato banana',
+    'There is no such a recipe, and if there is, it would be auful to eat it, do not try to do it, please',
+    'https://www.washingtonpost.com/rf/image_982w/2010-2019/WashingtonPost/2022/01/24/Food/Images/V_newsletter_Jan120302-Edit.jpg')">New Recipe</button>
+  </div>
+  <hr>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <app-recipe-item *ngFor="let recipe of recipes; let i= index;"
+    [name]="recipe.name"
+    [description]="recipe.description"
+    [imagePath]="recipe.imagePath"
+    [i]= "i"
+    (detailsListner)="showingDetails($event)">
+  </app-recipe-item>
+  </div>
+</div>
