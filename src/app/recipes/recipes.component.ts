@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.component';
+import { Recipe } from './recipe.model';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
@@ -7,16 +8,13 @@ import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.compo
 })
 export class RecipesComponent{
 
-  public recipeDetails = {name: "", description: "", imagePath: ""}
+  public recipe: Recipe | undefined;
 
   constructor() { }
 
-  Details(data:{name:string, description: string, imagePath: string})
+  Details(data: Recipe)
   {
-    this.recipeDetails.name = data.name;
-    this.recipeDetails.description = data.description;
-    this.recipeDetails.imagePath = data.imagePath;
-
+   this.recipe = data;
   }
   ngOnInit(): void {
   }

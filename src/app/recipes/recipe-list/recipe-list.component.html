@@ -9,12 +9,10 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <app-recipe-item *ngFor="let recipe of recipes; let i= index;"
-    [name]="recipe.name"
-    [description]="recipe.description"
-    [imagePath]="recipe.imagePath"
-    [i]= "i"
-    (detailsListner)="showingDetails($event)">
+    <app-recipe-item
+    *ngFor="let recipeEl of recipes;"
+    (click)="showDetails(recipeEl)"
+    [recipe]="recipeEl">
   </app-recipe-item>
   </div>
 </div>

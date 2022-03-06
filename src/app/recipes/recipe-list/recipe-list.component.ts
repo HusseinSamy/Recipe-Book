@@ -12,8 +12,7 @@ export class RecipeListComponent implements OnInit {
 
 
 
-  @Output() detailsListner2 = new EventEmitter <{name:string, description: string, imagePath: string}>();
-
+  @Output() detailsListner = new EventEmitter <Recipe>();
 
   createNewRecipe(name: string, description: string, imagePath: string)
   {
@@ -21,10 +20,11 @@ export class RecipeListComponent implements OnInit {
     this.recipes.push(newRecipe)
   }
 
-  showingDetails(data:{name:string, description: string, imagePath: string})
+
+  showDetails(data: Recipe)
   {
-    let clickedItem = {name: data.name, description: data.description, imagePath: data.imagePath}
-    this.detailsListner2.emit(clickedItem)
+    const clickedItem = new Recipe(data.name, data.description, data.imagePath)
+    this.detailsListner.emit(clickedItem)
   }
   ngOnInit(): void {
   }

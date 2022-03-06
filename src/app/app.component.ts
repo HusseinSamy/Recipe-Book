@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = "the app template component"
+  recipeTab = false;
+  shoppingTab = false;
+
+  displayRecipe()
+  {
+    this.recipeTab =  true;
+    this.shoppingTab =  false;
+  }
+  displayShoppingList()
+  {
+    this.recipeTab =  false;
+    this.shoppingTab =  true;
+  }
 }

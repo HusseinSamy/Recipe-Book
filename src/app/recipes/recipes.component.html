@@ -1,11 +1,14 @@
 <div class="row">
   <div class="col-md-5">
-    <app-recipe-list (detailsListner2)="Details($event)" ></app-recipe-list>
+    <app-recipe-list (detailsListner)="Details($event)" ></app-recipe-list>
   </div>
   <div class="col-md-7 ">
     <app-recipe-details
-    [name]="recipeDetails.name"
-    [description]="recipeDetails.description"
-    [imagePath]="recipeDetails.imagePath"></app-recipe-details>
+    [recipe]="recipe"
+    *ngIf="recipe !== undefined; else placeholder">
+  </app-recipe-details>
+  <ng-template #placeholder>
+    <p>Please select a recipe</p>
+  </ng-template>
   </div>
 </div>
