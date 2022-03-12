@@ -1,22 +1,23 @@
-import { Component, OnInit} from '@angular/core';
-import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.component';
-import { Recipe } from './recipe.model';
+import { Component, OnDestroy, OnInit} from '@angular/core';
+import { Recipe } from '../shared/Models/recipe.model';
+import { RecipesService } from './recipes.service';
+import { observable, Observable, Subscription } from 'rxjs';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
-  styleUrls: ['./recipes.component.sass']
+  styleUrls: ['./recipes.component.sass'],
+  providers: [RecipesService]
 })
-export class RecipesComponent{
+export class RecipesComponent implements OnInit, OnDestroy{
 
-  public recipe: Recipe | undefined;
+  public recipe!: Recipe;
+  scheduler!: Subscription;
+  constructor(private recipeService: RecipesService) {}
 
-  constructor() { }
-
-  Details(data: Recipe)
-  {
-   this.recipe = data;
-  }
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
   }
 
 }

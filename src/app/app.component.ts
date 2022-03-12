@@ -1,23 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  title = "the app template component"
-  recipeTab = false;
-  shoppingTab = false;
+export class AppComponent implements OnInit{
 
-  displayRecipe()
-  {
-    this.recipeTab =  true;
-    this.shoppingTab =  false;
-  }
-  displayShoppingList()
-  {
-    this.recipeTab =  false;
-    this.shoppingTab =  true;
+  ngOnInit(): void {
   }
 }

@@ -1,18 +1,17 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success"
-    (click)="createNewRecipe('Tomato banana',
-    'There is no such a recipe, and if there is, it would be auful to eat it, do not try to do it, please',
-    'https://www.washingtonpost.com/rf/image_982w/2010-2019/WashingtonPost/2022/01/24/Food/Images/V_newsletter_Jan120302-Edit.jpg')">New Recipe</button>
+    <button
+    class="btn btn-success"
+    (click)="onNewRecipe()">New Recipe</button>
   </div>
   <hr>
 </div>
 <div class="row">
   <div class="col-xs-12">
     <app-recipe-item
-    *ngFor="let recipeEl of recipes;"
-    (click)="showDetails(recipeEl)"
-    [recipe]="recipeEl">
+    *ngFor="let recipeEl of recipeService.getRecipes(); let i = index;"
+    [recipe]="recipeEl"
+    [index] = i>
   </app-recipe-item>
   </div>
 </div>
