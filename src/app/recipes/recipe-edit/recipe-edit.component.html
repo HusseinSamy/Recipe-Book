@@ -1,1 +1,57 @@
-<p>recipe-edit works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-group" (ngSubmit)="onSubmit()" [formGroup]="newRecipeForm">
+          <div class="row">
+            <label for="recipeName">Recipe Name</label>
+              <input
+              class="form-element"
+              type="text"
+              id="recipeName"
+              name="recipeName"
+              formControlName="recipeName">
+          </div>
+          <div class="row">
+            <label for="recipeDescription">Recipe Description</label>
+              <input
+              type="text"
+              id="recipeDescription"
+              name="recipeDescription"
+              formControlName="recipeDescription">
+          </div>
+          <div class="row">
+            <label for="recipeImage">Recipe Image Url</label>
+              <input
+              type="text"
+              id="recipeImage"
+              name="imageURL"
+              formControlName="imageURL">
+          </div>
+          <hr>
+          <div class="row" formGroupName="ingredientsForm">
+            <div class="col-sm-4 form-group">
+              <label for="name">Ingredient Name</label>
+              <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              formControlName="recipeIngredientName">
+            </div>
+            <div class="col-sm-2 form-group">
+              <label for="amount">Amount</label>
+              <input
+              type="number"
+              id="amount"
+              class="form-control"
+              name="Amount"
+              formControlName="recipeIngredientAmount">
+            </div>
+            <div class="col-sm-2">
+              <button class="btn btn-success" type="button" (click)="createNewIngredientElement()">Add Ingredient</button>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Save Changes</button>
+          </form>
+    </div>
+</div>
