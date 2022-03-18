@@ -6,7 +6,6 @@ import { observable, Observable, Subscription } from 'rxjs';
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.sass'],
-  providers: [RecipesService]
 })
 export class RecipesComponent implements OnInit, OnDestroy{
 

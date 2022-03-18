@@ -11,7 +11,9 @@ import { Recipe } from 'src/app/shared/Models/recipe.model';
 export class RecipeListComponent implements OnInit {
 
   ingredient: Ingredient = {name: 'Halopinos', amount: 2};
-  constructor(public recipeService: RecipesService, private router: Router, private activeRoute: ActivatedRoute) { }
+  constructor(public recipeService: RecipesService,
+    private router: Router,
+    private activeRoute: ActivatedRoute) { }
   onNewRecipe()
   {
     this.router.navigate(['new'], {relativeTo: this.activeRoute})

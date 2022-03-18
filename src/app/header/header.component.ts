@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import { ServerRequestsService } from './serverRequests.service';
+import { RecipesService } from '../recipes/recipes.service'
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,18 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+
+  constructor(
+    private serverRequestsService: ServerRequestsService,
+    private recipesService: RecipesService) { }
+
 
   ngOnInit(): void {
+  }
+  saveDataToServer(){
+    this.serverRequestsService.saveRecipes(this.recipesService.getRecipes());
+  }
+  fetchDataFromServer(){
+    this.serverRequestsService.fetchRecipes();
   }
 }
