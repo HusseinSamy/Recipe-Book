@@ -5,7 +5,7 @@ Recipe book is an Angular app which let you manage your own recipes, where you c
 I love being an interactive student when it comes to taking courses, so while I was taking this Angular course, I coded the course's project on my own and when I get stuck, I get back to the lecture and watch how the instructor have solved the problem that I was facing.
 
 ## What I have learned in this course? 
-This is an intensive Angular course ( over 30 hours of content ) so I learned alot about angular, like: 
+This is an intensive Angular course ( over 30 hours of content ) so I learned a lot about angular, like: 
 * Using the Angular CLI development tool 
 * Components 
 * Directives 
@@ -14,7 +14,8 @@ This is an intensive Angular course ( over 30 hours of content ) so I learned al
 * DOM Manipulation 
 * Dependency Injection 
 * Services 
-* Routing Observables 
+* Routing
+* Observables 
 * Forms 
 * Pipes
 * Creating http requests
